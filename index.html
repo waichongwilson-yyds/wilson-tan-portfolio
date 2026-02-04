@@ -1,333 +1,1267 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wilson Tan | CV Download</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f7f9fc;
-      color: #222;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilson Tan | Business Analyst & Project Manager</title>
 
-    header {
-      background: linear-gradient(120deg, #0a2540, #163b66);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    header h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --secondary: #334155;
+            --accent: #b45309;
+            --gold: #d97706;
+            --gold-light: #fbbf24;
+            --cream: #fefce8;
+            --light: #f8fafc;
+            --text: #0f172a;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --border: rgba(255, 255, 255, 0.12);
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
 
-    header h2 {
-      font-size: 20px;
-      font-weight: 300;
-      margin-bottom: 20px;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    header p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 16px;
-      line-height: 1.6;
-      opacity: 0.9;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .btn-group {
-      margin-top: 25px;
-    }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light);
+        }
 
-    .btn {
-      display: inline-block;
-      padding: 14px 22px;
-      margin: 8px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.2s ease-in-out;
-    }
+        a {
+            text-decoration: none;
+        }
 
-    .btn-primary {
-      background: #00b4d8;
-      color: white;
-    }
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
 
-    .btn-primary:hover {
-      background: #0096c7;
-    }
+        /* ================= NAVBAR ================= */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            padding: 1rem 0;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
 
-    .btn-secondary {
-      background: white;
-      color: #0a2540;
-    }
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .btn-secondary:hover {
-      background: #e8f0ff;
-    }
+        .nav-logo {
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 0.5px;
+            font-size: 1rem;
+        }
 
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 50px 20px;
-    }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+        }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
-      margin-top: 30px;
-    }
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 500;
+            transition: 0.2s ease;
+        }
 
-    .card {
-      background: white;
-      padding: 22px;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    }
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
 
-    .card h3 {
-      margin-top: 0;
-      color: #0a2540;
-    }
+        /* ================= HERO ================= */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+            color: var(--white);
+            padding: 9rem 0 5rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-    .logos {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      align-items: center;
-      margin-top: 30px;
-    }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(217, 119, 6, 0.18) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(30, 58, 95, 0.5) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(217, 119, 6, 0.12) 0%, transparent 45%);
+            pointer-events: none;
+        }
 
-    .logos img {
-      height: 45px;
-      object-fit: contain;
-      filter: grayscale(100%);
-      opacity: 0.85;
-      transition: 0.2s ease;
-    }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
 
-    .logos img:hover {
-      filter: grayscale(0%);
-      opacity: 1;
-      transform: scale(1.05);
-    }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(217, 119, 6, 0.18);
+            border: 1px solid rgba(217, 119, 6, 0.3);
+            padding: 0.55rem 1.1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--gold-light);
+            width: fit-content;
+            backdrop-filter: blur(10px);
+        }
 
-    .timeline {
-      margin-top: 30px;
-      border-left: 4px solid #00b4d8;
-      padding-left: 20px;
-    }
+        .hero-text h1 {
+            font-size: 3.6rem;
+            font-weight: 900;
+            margin-top: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.05;
+        }
 
-    .timeline-item {
-      margin-bottom: 25px;
-      background: white;
-      padding: 18px;
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-      position: relative;
-    }
+        .hero-text .title {
+            margin-top: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #fbbf24;
+        }
 
-    .timeline-item::before {
-      content: "";
-      width: 14px;
-      height: 14px;
-      background: #00b4d8;
-      border-radius: 50%;
-      position: absolute;
-      left: -30px;
-      top: 20px;
-    }
+        .hero-text p {
+            margin-top: 1.5rem;
+            font-size: 1.05rem;
+            color: rgba(203, 213, 225, 0.92);
+            line-height: 1.8;
+            max-width: 520px;
+        }
 
-    .timeline-item h3 {
-      margin: 0;
-      color: #0a2540;
-    }
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
 
-    .timeline-item span {
-      display: block;
-      font-size: 14px;
-      margin-top: 6px;
-      color: #555;
-    }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, var(--gold), var(--accent));
+            color: var(--white);
+            padding: 0.95rem 1.6rem;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 15px 40px rgba(217, 119, 6, 0.25);
+            transition: 0.25s ease;
+        }
 
-    .timeline-item p {
-      margin-top: 12px;
-      line-height: 1.5;
-      color: #333;
-    }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 50px rgba(217, 119, 6, 0.35);
+        }
 
-    footer {
-      background: #0a2540;
-      color: white;
-      text-align: center;
-      padding: 25px;
-      margin-top: 40px;
-    }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--white);
+            padding: 0.95rem 1.6rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.25s ease;
+            backdrop-filter: blur(10px);
+        }
 
-    footer a {
-      color: #00b4d8;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            border-color: rgba(251, 191, 36, 0.35);
+            background: rgba(217, 119, 6, 0.12);
+        }
+
+        /* CONTACT INFO */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.85rem 1.3rem;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            backdrop-filter: blur(10px);
+            transition: 0.25s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            border-color: rgba(251, 191, 36, 0.3);
+            background: rgba(217, 119, 6, 0.12);
+        }
+
+        .contact-item i {
+            color: var(--gold-light);
+        }
+
+        /* STATS */
+        .stats {
+            margin-top: 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            max-width: 520px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 1.4rem;
+            border-radius: 16px;
+            text-align: left;
+            backdrop-filter: blur(12px);
+            transition: 0.25s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(251, 191, 36, 0.2);
+            background: rgba(217, 119, 6, 0.08);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--gold-light);
+            line-height: 1;
+        }
+
+        .stat-label {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: rgba(148, 163, 184, 0.9);
+        }
+
+        /* PHOTO */
+        .hero-right {
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo-container {
+            position: relative;
+            width: 320px;
+            height: 320px;
+        }
+
+        .photo-glow {
+            position: absolute;
+            inset: -40px;
+            background: radial-gradient(circle, rgba(217, 119, 6, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(20px);
+        }
+
+        .photo-ring {
+            position: absolute;
+            inset: -10px;
+            border-radius: 50%;
+            border: 2px solid rgba(217, 119, 6, 0.25);
+            animation: rotate 20s linear infinite;
+        }
+
+        .photo-ring-2 {
+            position: absolute;
+            inset: -20px;
+            border-radius: 50%;
+            border: 1px solid rgba(217, 119, 6, 0.12);
+            animation: rotate 30s linear infinite reverse;
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(217, 119, 6, 0.35);
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
+            transition: 0.25s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.03);
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ================= SECTIONS ================= */
+        section {
+            padding: 5.5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            margin-top: 1rem;
+            color: var(--text-light);
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* ================= EXPERIENCE ================= */
+        .experience {
+            background: var(--white);
+        }
+
+        .timeline {
+            max-width: 980px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--gold), var(--accent), var(--gold));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 2rem;
+            width: 18px;
+            height: 18px;
+            background: var(--gold);
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.2);
+            z-index: 2;
+        }
+
+        .timeline-content {
+            width: 46%;
+            background: var(--white);
+            border-radius: 18px;
+            padding: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            transition: 0.25s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-6px);
+            border-color: rgba(217, 119, 6, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-date {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--gold), var(--accent));
+            color: var(--white);
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-company {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .timeline-role {
+            margin-top: 0.4rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .timeline-desc {
+            margin-top: 1rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.75;
+        }
+
+        .timeline-desc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-desc li {
+            padding-left: 1.2rem;
+            margin-bottom: 0.55rem;
+            position: relative;
+        }
+
+        .timeline-desc li::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            background: var(--gold);
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+        }
+
+        /* ================= BANKS ================= */
+        .banks {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .bank-logos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .bank-item {
+            background: var(--white);
+            border-radius: 18px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: 0.25s ease;
+        }
+
+        .bank-item:hover {
+            transform: translateY(-6px);
+            border-color: rgba(217, 119, 6, 0.2);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .bank-name {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .bank-years {
+            margin-top: 1rem;
+            display: inline-block;
+            padding: 0.55rem 1.2rem;
+            border-radius: 30px;
+            background: linear-gradient(135deg, var(--gold), var(--accent));
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        /* ================= SKILLS ================= */
+        .skills {
+            background: var(--primary);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skills::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(217, 119, 6, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(30, 58, 95, 0.35) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .skills .section-title {
+            color: var(--white);
+        }
+
+        .skills .section-subtitle {
+            color: rgba(148, 163, 184, 0.9);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 2rem;
+            border-radius: 18px;
+            backdrop-filter: blur(12px);
+            transition: 0.25s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-6px);
+            border-color: rgba(251, 191, 36, 0.25);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .skill-category h3 {
+            font-size: 1.15rem;
+            color: var(--gold-light);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .skill-tags {
+            margin-top: 1.3rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+        }
+
+        .skill-tag {
+            background: rgba(217, 119, 6, 0.15);
+            border: 1px solid rgba(217, 119, 6, 0.2);
+            color: var(--gold-light);
+            padding: 0.55rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            background: rgba(217, 119, 6, 0.3);
+        }
+
+        /* ================= EDUCATION ================= */
+        .education {
+            background: var(--white);
+        }
+
+        .education-card {
+            max-width: 650px;
+            margin: 0 auto 3rem;
+            padding: 2.3rem;
+            text-align: center;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .education-card h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .education-card p {
+            margin-top: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.3rem;
+        }
+
+        .cert-card {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 1.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-left: 4px solid var(--gold);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+            transition: 0.25s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-left-color: var(--accent);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .cert-provider {
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .cert-name {
+            margin-top: 0.6rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.5;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background: var(--primary);
+            padding: 4.5rem 0;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(217, 119, 6, 0.5), transparent);
+        }
+
+        footer h3 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--gold-light);
+        }
+
+        footer p {
+            margin-top: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(148, 163, 184, 0.9);
+            line-height: 1.7;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.3rem;
+            margin-top: 2.5rem;
+        }
+
+        .social-links a {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: var(--white);
+            transition: 0.25s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-4px);
+            background: rgba(217, 119, 6, 0.18);
+            color: var(--gold-light);
+            border-color: rgba(251, 191, 36, 0.3);
+        }
+
+        .copyright {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(100, 116, 139, 0.95);
+            font-size: 0.9rem;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 980px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .stats {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .timeline::before {
+                left: 25px;
+            }
+
+            .timeline-dot {
+                left: 25px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-text h1 {
+                font-size: 2.4rem;
+            }
+
+            .photo-container {
+                width: 240px;
+                height: 240px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ================= ANIMATION ================= */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+        }
+    </style>
+
+    <base target="_blank">
 </head>
+
 <body>
 
-  <!-- HERO -->
-  <header>
-    <h1>Wilson Tan</h1>
-    <h2>Business Analyst / Project Manager</h2>
-    <p>
-      Results-driven Business Analyst with 10+ years of experience in Banking & Finance.
-      Skilled in project delivery, automation, data governance, stakeholder management,
-      and process transformation across DBS, Citi, and Standard Chartered.
-    </p>
-
-    <div class="btn-group">
-      <a class="btn btn-primary" href="assets/cv/Wilson_Tan_CV.pdf" download>
-        Download CV (PDF)
-      </a>
-      <a class="btn btn-secondary" href="#summary">
-        View Career Overview
-      </a>
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-logo">WILSON TAN</div>
+                <div class="nav-links">
+                    <a href="#experience">Experience</a>
+                    <a href="#banks">Banks</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#education">Education</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </header>
 
-  <!-- SUMMARY -->
-  <section id="summary">
-    <h2>Career Snapshot</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>10+ Years Experience</h3>
-        <p>Deep exposure in financial banking sector with strong domain knowledge.</p>
-      </div>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
 
-      <div class="card">
-        <h3>Top Banks Background</h3>
-        <p>Experience working with DBS Bank, Citi Bank, and Standard Chartered.</p>
-      </div>
+                <div class="hero-left">
+                    <div class="hero-badge">
+                        <i class="fas fa-briefcase"></i>
+                        Available for Opportunities
+                    </div>
 
-      <div class="card">
-        <h3>Automation & Digitalisation</h3>
-        <p>Delivered projects focused on workflow automation, billing systems, and digitisation.</p>
-      </div>
+                    <div class="hero-text">
+                        <h1>WILSON TAN</h1>
+                        <div class="title">Business Analyst / Project Manager</div>
+                        <p>
+                            Results-driven Business Analyst with 10+ years of in-depth knowledge in the financial banking
+                            sector. Expertise in analyzing business needs, identifying process improvements, and
+                            delivering actionable insights across Global Financial Markets, Private Banking, and Consumer
+                            Banking.
+                        </p>
+                    </div>
 
-      <div class="card">
-        <h3>Governance & Data Quality</h3>
-        <p>Strong background in regulatory governance, risk controls, and data management.</p>
-      </div>
-    </div>
-  </section>
+                    <div class="hero-actions">
+                        <a href="mailto:twcwilson@gmail.com" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Contact Me
+                        </a>
 
-  <!-- COMPANY LOGOS -->
-  <section>
-    <h2>Trusted Experience With</h2>
-    <p>Companies and institutions from my career and certifications.</p>
+                        <a href="#experience" class="btn-secondary">
+                            <i class="fas fa-arrow-down"></i> View Experience
+                        </a>
+                    </div>
 
-    <div class="logos">
-      <img src="assets/logos/dbs.png" alt="DBS Logo">
-      <img src="assets/logos/citi.png" alt="Citi Logo">
-      <img src="assets/logos/scb.png" alt="Standard Chartered Logo">
-      <img src="assets/logos/mit.png" alt="MIT Logo">
-      <img src="assets/logos/google.png" alt="Google Logo">
-      <img src="assets/logos/ibm.png" alt="IBM Logo">
-      <img src="assets/logos/columbia.png" alt="Columbia University Logo">
-    </div>
-  </section>
+                    <div class="contact-info">
+                        <a href="tel:+6594569541" class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+65 9456 9541</span>
+                        </a>
 
-  <!-- WORK TIMELINE -->
-  <section>
-    <h2>Work Experience Timeline</h2>
+                        <a href="mailto:twcwilson@gmail.com" class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>twcwilson@gmail.com</span>
+                        </a>
 
-    <div class="timeline">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Singapore</span>
+                        </div>
+                    </div>
 
-      <div class="timeline-item">
-        <h3>DBS Bank – Business Analyst / Project Manager</h3>
-        <span>Jun 2025 – Dec 2025</span>
-        <p>
-          Supported AEGIS (Zeus) workbench project for Global Financial Markets (GFM).
-          Worked with UI/UX designers and developers to streamline workflows and integrate
-          APIs with systems such as Symphony and Murex.
-        </p>
-      </div>
+                    <div class="stats">
+                        <div class="stat-card">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Major Banks</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">250+</div>
+                            <div class="stat-label">Projects Managed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">17</div>
+                            <div class="stat-label">APAC Countries</div>
+                        </div>
+                    </div>
+                </div>
 
-      <div class="timeline-item">
-        <h3>DBS Bank – Technical Business Analyst</h3>
-        <span>May 2024 – Jan 2025</span>
-        <p>
-          Developed billing automation system for Securities & Fiduciary services.
-          Gathered requirements, wrote user stories, prepared SIT/UAT test cases,
-          and ensured successful deployment.
-        </p>
-      </div>
+                <div class="hero-right">
+                    <div class="photo-container">
+                        <div class="photo-glow"></div>
+                        <div class="photo-ring"></div>
+                        <div class="photo-ring-2"></div>
+                        <img src="pro_pic 2 no water mark.jpg" alt="Wilson Tan" class="profile-photo">
+                    </div>
+                </div>
 
-      <div class="timeline-item">
-        <h3>DBS Bank – Business Analyst</h3>
-        <span>Dec 2022 – Dec 2023</span>
-        <p>
-          Managed data governance and control oversight for PBWM.
-          Oversaw data quality issue resolution and ensured compliance with consent order workstreams.
-        </p>
-      </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="timeline-item">
-        <h3>Citi Bank – Project Manager</h3>
-        <span>Nov 2021 – Nov 2022</span>
-        <p>
-          Led cross-business migration project for Genesis platform, enabling financial transparency,
-          portfolio visibility, and budget tracking across initiatives.
-        </p>
-      </div>
+    <!-- EXPERIENCE -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-subtitle">
+                    A decade of excellence in banking technology and business transformation
+                </p>
+            </div>
 
-      <div class="timeline-item">
-        <h3>Citi Bank – Finance Analyst / Business Manager</h3>
-        <span>Oct 2016 – Oct 2019</span>
-        <p>
-          Managed APAC expenditure for Citi Technology Infrastructure (CTI),
-          supporting 250+ projects and ensuring budget governance and funding allocation.
-        </p>
-      </div>
+            <div class="timeline">
 
-      <div class="timeline-item">
-        <h3>Standard Chartered Bank – Talent Acquisition Coordinator</h3>
-        <span>Jan 2010 – Mar 2013</span>
-        <p>
-          Supported HR onboarding processes for global finance and risk hiring.
-          Coordinated interviews, offers, immigration matters, and onboarding workflows.
-        </p>
-      </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Jun 2025 - Present</span>
+                        <div class="timeline-company"><i class="fas fa-building"></i> DBS Bank</div>
+                        <div class="timeline-role">Business Analyst / Project Manager</div>
+                        <div class="timeline-desc">
+                            <ul>
+                                <li>Piloting Project AEGIS (Zeus) workbench for Global Financial Markets (GFM)</li>
+                                <li>Designing solutions for FX & Commodities, Rates, Credit, Investment Banking,
+                                    Equities</li>
+                                <li>Working with UI/UX designers to elicit business user expectations</li>
+                                <li>Data mapping from Collibra and Murex systems</li>
+                                <li>Stakeholder management with Front Office, Traders, Desk Heads, BMO, COO</li>
+                                <li>API integration with ADA, Iworks, ROBO, RICO, Symphony, Murex</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-    </div>
-  </section>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">May 2024 - Jan 2025</span>
+                        <div class="timeline-company"><i class="fas fa-building"></i> DBS Bank</div>
+                        <div class="timeline-role">Technical Business Analyst</div>
+                        <div class="timeline-desc">
+                            <ul>
+                                <li>Supporting E2E tech solutions for IBGT (Institutional Banking Group)</li>
+                                <li>Streamlining TOM (Target Operating Model) for dataflow and workflow</li>
+                                <li>Automating lending services: mortgage loans, full redemption, capital repayment</li>
+                                <li>Managing IBPM workbench for platform onboarding</li>
+                                <li>API integration with Finacle, RCLS, IPE, FTW, POLA</li>
+                                <li>Channels: Guided Chat, CCTR, iServe, CMCP, LEAPS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-  <!-- CONTACT -->
-  <section>
-    <h2>Contact</h2>
-    <div class="card">
-      <p><b>Email:</b> twcwilson@gmail.com</p>
-      <p><b>Phone:</b> +65 9456 9541</p>
-      <p><b>Location:</b> Singapore</p>
-      <p>
-        <a class="btn btn-primary" href="assets/cv/Wilson_Tan_CV.pdf" download>
-          Download CV Again
-        </a>
-      </p>
-    </div>
-  </section>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Dec 2022 - Dec 2023</span>
+                        <div class="timeline-company"><i class="fas fa-building"></i> DBS Bank</div>
+                        <div class="timeline-role">Business Analyst - Billing Automation</div>
+                        <div class="timeline-desc">
+                            <ul>
+                                <li>Developed billing automation system for Securities & Fiduciary Services</li>
+                                <li>Handled complex products: Corporate Trust, Custody, Fund Services</li>
+                                <li>Customized for Bonds, Trusts, Employment Benefit Schemes, REITs, Escrow</li>
+                                <li>Conducted SIT and UAT testing</li>
+                                <li>Prepared regression testing and UAT sign-off</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-  <footer>
-    <p>© 2026 Wilson Tan | Built for CV Download</p>
-    <p>
-      <a href="assets/cv/Wilson_Tan_CV.pdf" download>Download CV</a>
-    </p>
-  </footer>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Nov 2021 - Nov 2022</span>
+                        <div class="timeline-company"><i class="fas fa-building"></i> Citi Bank</div>
+                        <div class="timeline-role">Project Manager - Data Risk & Control</div>
+                        <div class="timeline-desc">
+                            <ul>
+                                <li>Governed Data concerns for Global Private Banking Wealth Management</li>
+                                <li>Managed data quality issues: inaccurate, incomplete, invalid, duplicate data</li>
+                                <li>Steered Issue Management Resolution (IMR) lifecycle</li>
+                                <li>Regular CDE meetings with Chief Data Office</li>
+                                <li>Prepared Regional Data Governance Council materials</li>
+                                <li>Ensured compliance with Consent Order work streams</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Sep 2020 - Sep 2021</span>
+                        <div class="timeline-company"><i class="fas fa-building"></i> DBS Bank</div>
+                        <div class="timeline-role">Business Analyst - Genesis Platform</div>
+                        <div class="timeline-desc">
+                            <ul>
+                                <li>Cross-business migration project for Data Transformation team</li>
+                                <li>Genesis platform for portfolio and financial transparency</li>
+                                <li>Migrated documents: Business cases, Fungibility forms, Quality checklists</li>
+                                <li>Input Capex and Opex for sub work streams</li>
+                                <li>Data entries for Horizon/Thematic/Digital Value Capture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Oct 2016 - Oct 2019</span>
+                        <div class="timeline-company"><i class="fas fa-building"></i> Citi Bank</div>
+                        <div class="timeline-role">Finance Analyst / Business Manager</div>
+                        <div class="timeline-desc">
+                            <ul>
+                                <li>Represented Asia Pacific for Citi Technology Infrastructure (CTI)</li>
+                                <li>Controlled expenditure for 250+ projects across 17 countries</li>
+                                <li>Conducted financial reviews for projects >$100K spend</li>
+                                <li>Reviewed P/L impact, cost savings, cost avoidance, NBV</li>
+                                <li>Weekly Investment Committee participation</li>
+                                <li>Managed via Technology Capital Management Systems (TCAPS)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BANKS -->
+    <section class="banks" id="banks">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Banking Experience</h2>
+                <p class="section-subtitle">Trusted by leading financial institutions across the region</p>
+            </div>
+
+            <div class="bank-logos">
+                <div class="bank-item">
+                    <div class="bank-name">DBS Bank</div>
+                    <div class="bank-years">4 Years</div>
+                </div>
+
+                <div class="bank-item">
+                    <div class="bank-name">Citi Bank</div>
+                    <div class="bank-years">6 Years</div>
+                </div>
+
+                <div class="bank-item">
+                    <div class="bank-name">Standard Chartered</div>
+                    <div class="bank-years">3 Years</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Core Competencies</h2>
+                <p class="section-subtitle">Technical expertise and domain knowledge</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-line"></i> Business Analysis</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Requirements Gathering</span>
+                        <span class="skill-tag">User Stories</span>
+                        <span class="skill-tag">Process Mapping</span>
+                        <span class="skill-tag">Workflow Design</span>
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">Stakeholder Management</span>
+                        <span class="skill-tag">UAT/SIT Testing</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-tasks"></i> Project Management</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Agile/Scrum</span>
+                        <span class="skill-tag">Jira</span>
+                        <span class="skill-tag">SDLC</span>
+                        <span class="skill-tag">Budget Management</span>
+                        <span class="skill-tag">Risk Management</span>
+                        <span class="skill-tag">Governance</span>
+                        <span class="skill-tag">Stakeholder Communication</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Technical Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">API Integration</span>
+                        <span class="skill-tag">Data Mapping</span>
+                        <span class="skill-tag">Collibra</span>
+                        <span class="skill-tag">Murex</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Excel (Advanced)</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-university"></i> Banking Domain</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Global Financial Markets</span>
+                        <span class="skill-tag">Private Banking</span>
+                        <span class="skill-tag">Wealth Management</span>
+                        <span class="skill-tag">Securities & Fiduciary</span>
+                        <span class="skill-tag">Lending Services</span>
+                        <span class="skill-tag">Regulatory Compliance</span>
+                        <span class="skill-tag">Data Governance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="education" id="education">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education & Certifications</h2>
+                <p class="section-subtitle">Continuous learning and professional development</p>
+            </div>
+
+            <div class="education-card">
+                <h3>Diploma in Business Process & System Engineering</h3>
+                <p>Temasek Polytechnic | 2007 - 2010</p>
+            </div>
+
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <div class="cert-provider">Google</div>
+                    <div class="cert-name">Data Analytics & Project Management</div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-provider">IBM</div>
+                    <div class="cert-name">Database and SQL for Data Science with Python</div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-provider">MIT</div>
+                    <div class="cert-name">Digital Transformation</div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-provider">Yale University</div>
+                    <div class="cert-name">Financial Markets</div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-provider">University of London</div>
+                    <div class="cert-name">Machine Learning for All</div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-provider">Columbia University</div>
+                    <div class="cert-name">Economics of Money and Banking</div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-provider">University of Geneva</div>
+                    <div class="cert-name">Portfolio and Risk Management</div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-provider">Meta</div>
+                    <div class="cert-name">Principles of UX/UI Design</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="container">
+            <h3>Let's Connect</h3>
+            <p>
+                I'm currently open to new opportunities in Business Analysis and Project Management within the banking and
+                financial services sector.
+            </p>
+
+            <div class="contact-info" style="justify-content:center; margin-top:2rem;">
+                <a href="tel:+6594569541" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+65 9456 9541</span>
+                </a>
+
+                <a href="mailto:twcwilson@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>twcwilson@gmail.com</span>
+                </a>
+            </div>
+
+            <div class="social-links">
+                <a href="mailto:twcwilson@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+6594569541"><i class="fas fa-phone"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+            <a href="mailto:twcwilson@gmail.com" class="btn-primary" style="margin-top:2.5rem;">
+                <i class="fas fa-paper-plane"></i> Get In Touch
+            </a>
+
+            <div class="copyright">
+                © 2025 Wilson Tan. Built for recruitment purposes.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade up animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.timeline-content, .bank-item, .cert-card, .skill-category').forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(25px)";
+            el.style.transition = "0.7s ease";
+            observer.observe(el);
+        });
+    </script>
 
 </body>
+
 </html>
